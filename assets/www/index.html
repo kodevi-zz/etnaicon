@@ -53,13 +53,13 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 
 <div class="container-fluid" style="color:#FFFFFF">
 <div class="row placeholders" align="center">
-		<a href="#" onclick="window.open('kkicon.pdf','_self','location=yes')" style="color:#FFFFFF">
+		<a href="#" onclick="window.location('aaa.html')" style="color:#FFFFFF">
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/1.png" class="img-responsive" border="0">
 		<h6 class="text">Kullanım Klavuzu</h6>
 		</div>
 		</a>
-		<a href="#" onclick="window.open(encodeURI('http://www.google.com/'), '_system','location=yes','toolbar=yes')" style="color:#FFFFFF">
+		<a href="#" onclick="navigator.app.loadUrl('file:///_asset/www/aaa.html');" style="color:#FFFFFF">
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/2.png" class="img-responsive" border="0">
 		<h6 class="text">Çözüm Ortakları</h6>
@@ -88,9 +88,23 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	        <script type="text/javascript" src="cordova.js"></script>
-  		<script type="text/javascript">
-            app.initialize();
-        </script> 	
+   <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+         var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); });
+    }
+
+    </script>
 
     </body>
 </html>
