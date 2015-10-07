@@ -18,9 +18,8 @@ body {
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
-	  
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -36,9 +35,10 @@ body {
           <li><a href="#">Çözüm Ortakları</a></li>
           <li><a href="#">Etna Assistance</a></li>
           <li><a href="#" onclick="openDeviceBrowser('http://www.etnagy.com/iletisim')">Müşteri Görüşleri</a></li>
+		  </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+  </div>
+</nav>
 
 
 
@@ -80,15 +80,17 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 </div>
         <script type="text/javascript" src="cordova.js"></script>
+		 <script type="text/javascript">
+            app.initialize();
+        </script> 
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 		function openDeviceBrowser (externalLinkToOpen){	
-				window.open(externalLinkToOpen, '_system', 'location=no');
+				window.open(externalLinkToOpen, '_system', 'location=yes,toolbar=yes');
 		}
         </script>
-		  		<script type="text/javascript">
-            app.initialize();
-        </script> 
+		
+
     </body>
 </html>
