@@ -28,8 +28,7 @@
     <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
 
     <preference name="loglevel" value="DEBUG" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
-    <feature name="App">
+	    <feature name="App">
       <param name="android-package" value="org.apache.cordova.App"/>
     </feature>
     <feature name="Geolocation">
