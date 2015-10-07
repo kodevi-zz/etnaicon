@@ -15,32 +15,6 @@ body {
 }
 -->
 </style>
- <script type="text/javascript" charset="utf-8">
- document.addEventListener("deviceready", onDeviceReady, false);
-    // Global InAppBrowser reference
-    var iabRef = null;
-    function iabLoadStart(event) {
-        alert(event.type + ' - ' + event.url);
-    }
-    function iabLoadStop(event) {
-        alert(event.type + ' - ' + event.url);
-    }
-    function iabClose(event) {
-         alert(event.type);
-         iabRef.removeEventListener('loadstart', iabLoadStart);
-         iabRef.removeEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('exit', iabClose);
-    }
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-         alert('Device is ready!');
-         //iabRef = window.open('http://apache.org', '_blank', 'location=yes');
-         //iabRef.addEventListener('loadstart', iabLoadStart);
-         //iabRef.addEventListener('loadstop', iabLoadStop);
-         //iabRef.addEventListener('exit', iabClose);
-    }
-    </script>
 </head>
 <body>
 
@@ -85,13 +59,13 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 		<h6 class="text">Kullanım Klavuzu</h6>
 		</div>
 		</a>
-		<a href="#" style="color:#FFFFFF">
+		<a href="#" onclick="window.open(encodeURI('http://www.google.com/'), '_system','location=yes','toolbar=yes')" style="color:#FFFFFF">
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/2.png" class="img-responsive" border="0">
 		<h6 class="text">Çözüm Ortakları</h6>
 		</div>
 		</a>
-		<a href="#"  style="color:#FFFFFF"> 
+		<a href="#" onclick="window.open('aa.html','_system','location=yes','toolbar=yes')" style="color:#FFFFFF"> 
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/3.png" class="img-responsive" border="0">
 		<h6 class="text">Etna Assistance</h6>
