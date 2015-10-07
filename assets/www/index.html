@@ -15,6 +15,32 @@ body {
 }
 -->
 </style>
+ <script type="text/javascript" charset="utf-8">
+ document.addEventListener("deviceready", onDeviceReady, false);
+    // Global InAppBrowser reference
+    var iabRef = null;
+    function iabLoadStart(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+    function iabLoadStop(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+    function iabClose(event) {
+         alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+         alert('Device is ready!');
+         //iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+         //iabRef.addEventListener('loadstart', iabLoadStart);
+         //iabRef.addEventListener('loadstop', iabLoadStop);
+         //iabRef.addEventListener('exit', iabClose);
+    }
+    </script>
 </head>
 <body>
 
@@ -53,7 +79,7 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 
 <div class="container-fluid" style="color:#FFFFFF">
 <div class="row placeholders" align="center">
-		<a href="kkicon.pdf" style="color:#FFFFFF">
+		<a href="#" onclick="window.open('kkicon.pdf','_self','location=yes')" style="color:#FFFFFF">
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/1.png" class="img-responsive" border="0">
 		<h6 class="text">Kullanım Klavuzu</h6>
@@ -65,32 +91,32 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 		<h6 class="text">Çözüm Ortakları</h6>
 		</div>
 		</a>
-		<a href="#" style="color:#FFFFFF"> 
+		<a href="#"  style="color:#FFFFFF"> 
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/3.png" class="img-responsive" border="0">
 		<h6 class="text">Etna Assistance</h6>
 		</div>
 		</a>
-		<a href="#" onclick="openDeviceBrowser('http://www.etnagy.com/iletisim')" style="color:#FFFFFF">
+		<a href="#" onclick="window.open('http://www.etnagy.com/iletisim','_self','location=yes')" style="color:#FFFFFF">
 		<div class="col-xs-6 col-sm-3 placeholder">
 		<img src="img/4.png" class="img-responsive" border="0">
 		<h6 class="text">Müşteri Görüşleri</h6>
 		</div>
+		<button type="button" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">		<div class="col-xs-6 col-sm-3 placeholder">
+		<img src="img/4.png" class="img-responsive" border="0">
+		<h6 class="text">Müşteri Görüşleri</h6>
+		</div>
+</button>
 		</a>
 </div>
 </div>
-        <script type="text/javascript" src="cordova.js"></script>
-		 <script type="text/javascript">
-            app.initialize();
-        </script> 
+
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-		function openDeviceBrowser (externalLinkToOpen){	
-				window.open(externalLinkToOpen, '_system', 'location=yes,toolbar=yes');
-		}
-        </script>
-		
+	        <script type="text/javascript" src="cordova.js"></script>
+  		<script type="text/javascript">
+            app.initialize();
+        </script> 	
 
     </body>
 </html>
