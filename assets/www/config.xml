@@ -15,7 +15,7 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
        etna icon
     </author>
-	
+ <access origin="*"/>	
 	
 	<gap:platform name="android" minVersion="2.1"/>
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
@@ -118,7 +118,7 @@
   <plugins>
 	<plugin name="InAppBrowser" value="CDVInAppBrowser" />
   </plugins>
- <access origin="*"/>	
+	
 	
     <!-- Deprecated plugins element. Remove in 3.0 -->
 
