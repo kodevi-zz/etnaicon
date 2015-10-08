@@ -60,23 +60,30 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 		
 <div class="col-xs-6 col-sm-3 placeholder">		
-<<<<<<< HEAD
-<button type="button" onClick="openUrl('kkicon.pdf'); return false;" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
-=======
-<button type="button" onClick="window.plugins.childBrowser.showWebPage('kkicon.pdf')" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
->>>>>>> origin/master
+<button type="button" onClick="openPDF();" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Etna Assistance</h6>
 </button>
 </div>	
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="navigator.app.loadUrl('file:///kkicon.pdf')" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
+<button type="button" onClick="window.location='aa.html'" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Müşteri Görüşleri</h6>
 </button>
 </div>			
 
 </div>
 </div>
+<script>
+function openPDF() {
+     var ref = window.open('kkicon.pdf', '_blank', 'location=yes');
+     ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+     ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+     ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+     ref.addEventListener('exit', function(event) { alert(event.type); });
+}
+
+
+</script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script> 
