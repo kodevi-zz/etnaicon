@@ -26,6 +26,7 @@
 		but PGB will add some.
 	-->
 	<preference name="permissions" value="none"/>
+	<preference name="stay-in-webview" value="false" />
 	
 	
 
@@ -99,8 +100,11 @@
       <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
     </feature>
 	
+  <plugins>
+	<plugin name="InAppBrowser" value="CDVInAppBrowser" />
+  </plugins>
+	
 	 <access origin="*"/>
     <!-- Deprecated plugins element. Remove in 3.0 -->
-    <plugins>
-    </plugins>
+
 </widget>
