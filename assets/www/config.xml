@@ -26,29 +26,6 @@
 		but PGB will add some.
 	-->
 	<preference name="permissions" value="none"/>
-<<<<<<< HEAD
-=======
-	<preference name="stay-in-webview" value="false" />
-	
-	<permission name="android.permission.CAMERA" />
-	<permission name="android.permission.VIBRATE" />
-	<permission name="android.permission.ACCESS_COARSE_LOCATION" />
-	<permission name="android.permission.ACCESS_FINE_LOCATION" />
-	<permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-	<permission name="android.permission.READ_PHONE_STATE" />
-	<permission name="android.permission.READ_PHONE_STATE" />
-	<permission name="android.permission.READ_PHONE_STATE" />
-	<permission name="android.permission.INTERNET" />
-	<permission name="android.permission.RECEIVE_SMS" />
-	<permission name="android.permission.RECORD_AUDIO" />
-	<permission name="android.permission.MODIFY_AUDIO_SETTINGS" />
-	<permission name="android.permission.READ_CONTACTS" />
-	<permission name="android.permission.WRITE_CONTACTS" />
-	<permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<permission name="android.permission.ACCESS_NETWORK_STATE" />	
-
->>>>>>> origin/master
-   
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
