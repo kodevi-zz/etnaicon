@@ -6,7 +6,7 @@
 	<meta name="msapplication-tap-highlight" content="no" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<title>İcon Talas etna</title>
+	<title>İcon Talas</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
 <!--
@@ -36,6 +36,7 @@ body {
 
 
 <div class="container-fluid" style="color:#FFFFFF">
+<a onClick="openPDF('kkicon.pdf');">Open PDF</a>
 <h3>Etna Gayrimenkul Yatırım A.Ş.</h3>
 <h4>Çünkü İçinde Siz Varsınız...</h4>
 Firmamız öncelikli olarak gayrimenkul yatırımları ve müteahhitlik hizmetleri alanında faaliyet göstermek üzere kurulmuştur. Çok güçlü bir sermaye yapısına sahip olan firmamız prensip olarak yapacağı tüm projelerin arsalarını satın alma yoluna gitmektedir. Kayseri'de planlanan projeler dışında önemli miktarda arsa stoğu bulunmakta olup farklı şehir ve metropollerde projeler ve yatırımlar yapmayı planlamaktadır.
@@ -54,7 +55,7 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.open('file://download/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/2.png" class="img-responsive" border="0">
+<button type="button" onClick="openPDF('kkicon.pdf');" class="btn-link img-responsive"><img src="img/2.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Çözüm Ortakları</h6>
 </button>
 </div>
@@ -74,14 +75,42 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 </div>
 
-		<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script>
-function openPDF() {
-     var ref = window.open('file://kkicon.pdf', '_system', 'location=yes');
-     ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-     ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-     ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-     ref.addEventListener('exit', function(event) { alert(event.type); });
+var fs;
+
+function fsSuccess(fileSystem)
+{
+    fs = fileSystem;
+}
+
+function fsFail(event)
+{
+    console.log(event.target.error.code);
+}
+
+function openPDF(file) {
+
+    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fsSuccess, fsFail);     
+
+    file = fs.root.toURL() + file;
+
+    cordova.plugins.fileOpener2.open(
+    file, // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
+    'application/pdf', 
+    { 
+        error : function(e) { 
+            console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
+            $('#errorpdf').html('Error status: ' + e.status + ' - Error message: ' + e.message+' - File : '+file);
+        },
+        success : function () {
+            console.log('file opened successfully');          
+            $('#errorpdf').html('file opened successfully');
+
+        }
+    }
+);
 }
 
 </script>				
