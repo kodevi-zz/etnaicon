@@ -36,7 +36,7 @@ body {
 
 
 <div class="container-fluid" style="color:#FFFFFF">
-<h3><a href="#">Etna Gayrimenkul Yatırım A.Ş</a>.</h3>
+<h3>Etna Gayrimenkul Yatırım A.Ş.</h3>
 <h4>Çünkü İçinde Siz Varsınız...</h4>
 Firmamız öncelikli olarak gayrimenkul yatırımları ve müteahhitlik hizmetleri alanında faaliyet göstermek üzere kurulmuştur. Çok güçlü bir sermaye yapısına sahip olan firmamız prensip olarak yapacağı tüm projelerin arsalarını satın alma yoluna gitmektedir. Kayseri'de planlanan projeler dışında önemli miktarda arsa stoğu bulunmakta olup farklı şehir ve metropollerde projeler ve yatırımlar yapmayı planlamaktadır.
 
@@ -48,25 +48,25 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 <div class="row placeholders" align="center">
 	
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.resolveLocalFileSystemURI('file:///kkicon.pdf', onResolveSuccess, fail);" class="btn-link img-responsive"><img src="img/1.png" class="img-responsive" border="0">
+<button type="button" onClick="openPDF()" class="btn-link img-responsive"><img src="img/1.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Kullanım Klavuzu</h6>
 </button>
 </div>
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.requestFileSystem('file:///kkicon.pdf', onResolveSuccess, fail);" class="btn-link img-responsive"><img src="img/2.png" class="img-responsive" border="0">
+<button type="button" onClick="window.open('file:///android_asset/www/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/2.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Çözüm Ortakları</h6>
 </button>
 </div>
 		
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="navigator.app.loadUrl('file:///android_asset/www/kkicon.pdf')" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
+<button type="button" onClick="window.open('file:///assets/www/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Etna Assistance</h6>
 </button>
 </div>	
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="navigator.app.loadUrl('file:///android_asset/www/kkicon.pdf')" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
+<button type="button" onClick="window.open('kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Müşteri Görüşleri</h6>
 </button>
 </div>			
@@ -75,7 +75,7 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 <script>
 function openPDF() {
-     var ref = window.open('file:///assets/www/kkicon.pdf', '_system', 'location=yes');
+     var ref = window.open('kkicon.pdf', '_system', 'location=yes');
      ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
