@@ -60,13 +60,13 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 		
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.location='bb.html'" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
+<button type="button" onClick="gotFS('kkicon.pdf')" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Etna Assistance</h6>
 </button>
 </div>	
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.open('file:///Download/aa.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
+<button type="button" onClick="gotFS()" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Müşteri Görüşleri</h6>
 </button>
 </div>			
@@ -78,6 +78,49 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 <script charset="utf-8" src="pdfviewer.js"> </script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script> 
+<script type="text/javascript" charset="utf-8">
+
+// Wait for device API libraries to load
+//
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// device APIs are available
+//
+function onDeviceReady() {
+    alert('onready');
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+}
+
+function gotFS(fileSystem) {
+    alert('gotFS');
+    fileSystem.root.getFile("kkicon.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+}
+
+function gotFileEntry(fileEntry) {
+    fileEntry.createWriter(gotFileWriter, fail);
+}
+
+function gotFileWriter(writer) {
+    writer.onwriteend = function(evt) {
+        console.log("contents of file now 'some sample text'");
+        writer.truncate(11);
+        writer.onwriteend = function(evt) {
+            console.log("contents of file now 'some sample'");
+            writer.seek(4);
+            writer.write(" different text");
+            writer.onwriteend = function(evt){
+                console.log("contents of file now 'some different text'");
+            }
+        };
+    };
+    writer.write("some sample text");
+}
+
+function fail(error) {
+    alert('fail: '+error.code);
+}
+
+</script>
         <script type="text/javascript">
             app.initialize();
         </script>
