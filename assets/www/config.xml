@@ -18,10 +18,9 @@
 	
 	<access origin="*"/>
 	<gap:platform name="android" minVersion="2.1"/>
-	<gap:plugin name="com.gkcgautam.asset2sd" source="pgb" version="2.0.0" />
-	<gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" source="pgb" version="1.0.11" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" source="pgb" version="0.2.4" />
-	
+	<gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" />
+	<gap:plugin name="com.gkcgautam.asset2sd" version="2.0.0" />
 
 	<!-- PG version -->
 	<preference name="phonegap-version" value="3.1.0" />
@@ -102,7 +101,7 @@
 	
 	<plugin name="File" value="org.apache.cordova.FileUtils" />
     <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
-	 
+	<plugin name="PdfViewer" value="com.phonegap.plugins.pdfViewer.PdfViewer"/>
     <!-- Deprecated plugins element. Remove in 3.0 -->
 
 </widget>
