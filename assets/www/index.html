@@ -54,19 +54,19 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.open('file://android_asset/www/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/2.png" class="img-responsive" border="0">
+<button type="button" onClick="window.open('file:///android_asset/www/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/2.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Çözüm Ortakları</h6>
 </button>
 </div>
 		
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.plugins.childBrowser.showWebPage('android_asset/www/kkicon.pdf');" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
+<button type="button" onClick="bb.html" class="btn-link img-responsive"><img src="img/3.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Etna Assistance</h6>
 </button>
 </div>	
 
 <div class="col-xs-6 col-sm-3 placeholder">		
-<button type="button" onClick="window.open('/android_asset/www/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
+<button type="button" onClick="window.open('file:///assets/www/kkicon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/4.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Müşteri Görüşleri</h6>
 </button>
 </div>			
@@ -75,18 +75,6 @@ Etik değerler, kalite ve FARKLILIK; ETNA ve takım arkadaşlarının tavizsiz k
 </div>
 
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8">
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function openpdf() {
-	 var localPath = getFilePath('aa.html');
-	 alert(localPath);
-         var ref = window.open('http://apache.org', '_blank', 'location=yes');
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-         ref.addEventListener('exit', function() { alert(event.type); });
-    }
-
-    </script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script> 
     </body>
