@@ -50,7 +50,7 @@ body {
 <div class="row placeholders" align="center">
 	
 <div class="col-xs-6 col-sm-4 placeholder">		
-<button type="button" onClick="window.open('file:///storage/sdcard0/Download/icon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/1.png" class="img-responsive" border="0">
+<button type="button" onClick="window.open('/storage/sdcard0/Download/icon.pdf', '_system', 'location=yes,enableViewportScale=yes')" class="btn-link img-responsive"><img src="img/1.png" class="img-responsive" border="0">
 <h6 class="text" style="color:#FFFFFF;text-decoration:none">Kullanım Klavuzu</h6>
 </button>
 </div>
@@ -107,7 +107,10 @@ info@etnagy.com.tr
 <script type="text/javascript" src="js/jquery.js"></script>
 <script charset="utf-8" src="pdfviewer.js"> </script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="cordova.js"></script> 
+        <script type="text/javascript">
+            app.initialize();
+        </script>
 
     </body>
 </html>
